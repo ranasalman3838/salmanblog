@@ -1,0 +1,26 @@
+body{
+    background-color: #727c72;
+}
+
+#content{
+    display: inline-block;
+    margin:auto;
+    width: 80%;
+    border: 5px solid ghostwhite;
+    padding: 50px;
+    background-color: #f6e5c4;
+    align-content: center;
+    margin-left: 5%;
+    margin-top: 5%;
+
+}
+#sidebar{
+    display: inline-block;
+    float:right;
+    width: 40%;
+    margin-top: 2%;
+    margin-right: 8%;
+    border: 5px solid ghostwhite;
+    background-color: #f6e5c4;
+
+}

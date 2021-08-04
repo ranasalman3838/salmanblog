@@ -1,0 +1,11 @@
+{% extends "blog/base.html" %}
+{% block title %}{{ post.title }}{% endblock %}
+{% block content %}
+<h1>{{ post.title }}</h1>
+<p class="date"><i style="color: #727c72">Published {{ post.publish }} by {{ post.author }}</i>
+
+</p>
+{{ post.body|linebreaks }}
+    <hr>
+    <button><a href="{% url 'blog:post_list' %}"> Go back</a></button>
+{% endblock %}
