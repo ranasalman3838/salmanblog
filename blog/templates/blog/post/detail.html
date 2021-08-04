@@ -6,6 +6,11 @@
 
 </p>
 {{ post.body|linebreaks }}
+<p>
+<a href="{% url "blog:post_share" post.id %}">
+Share this post
+</a>
+</p>
     <hr>
     <button><a href="{% url 'blog:post_list' %}"> Go back</a></button>
 {% endblock %}
