@@ -6,13 +6,14 @@
     <h1>WELCOME TO MY BLOGS</h1>
 
 {% if tag %}
-    <h2>Posts tagged with "{{ tag.name }}"</h2>
+    <h3>Posts tagged with "{{ tag.name }}"</h3>
 {% endif %}
 {% for post in posts %}
-<h2>
+<h4>
 
 <a href="{{ post.get_absolute_url }}">
-{{ post.title }}
+    <h3>{{ post.title }}</h3>
+
 </a>
 <p class="tags">
 Tags:
@@ -23,7 +24,7 @@ Tags:
 {% if not forloop.last %}, {% endif %}
 {% endfor %}
 </p>
-</h2>
+</h4>
 <p class="date">
 <i style="color: grey">Published {{ post.publish }} by {{ post.author }}</i>
 
@@ -32,6 +33,5 @@ Tags:
     <hr>
 {% endfor %}
 {% include "pagination.html" with page=posts %}
-{#    {% include "pagination.html" with page=page_obj %}#}
 {% endblock %}
 

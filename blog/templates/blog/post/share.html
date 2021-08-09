@@ -1,5 +1,5 @@
-
 {% extends "blog/base.html" %}
+{% load widget_tweaks %}
 {% block title %}Share a post{% endblock %}
 {% block content %}
 {% if sent %}
@@ -10,9 +10,25 @@
 {% else %}
 <h1>Share "{{ post.title }}" by e-mail</h1>
 <form method="post">
-{{ form.as_p }}
+<div class="form-group">
+<div class="form-group container">
+<label class="label">Name</label>
+    {% render_field form.name class="input form-control" placeholder="your name" %}
+      <br>
+    <label class="label">Your mail</label>
+    {% render_field form.email class="input form-control" placeholder="yourmail@example.com" %}
+      <br>
+    <label class="label">Reciever mail</label>
+    {% render_field form.to class="input form-control" placeholder="recievermail@example.com" %}
+      <br>
+    <label class="label">Your Comments</label>
+    {% render_field form.comments class="textarea form-control" placeholder="Enter your comments" %}
+    <br>
+    </div>
+</div>
+
 {% csrf_token %}
-<input type="submit" value="Send e-mail">
+<input style="float:right; margin-right: 3%; font-size: 22px;" class="button btn-secondary" type="submit" value="Send e-mail">
 </form>
 {% endif %}
 {% endblock %}

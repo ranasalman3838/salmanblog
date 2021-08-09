@@ -1,5 +1,6 @@
-body{
-    background-color: #727c72;
+.bgcolor{
+
+    background-color: #a1e051;
 }
 
 #content{
@@ -8,7 +9,8 @@ body{
     width: 80%;
     border: 5px solid ghostwhite;
     padding: 50px;
-    background-color: #f6e5c4;
+    color:white;
+    background-color: #231a01;
     align-content: center;
     margin-left: 5%;
     margin-top: 5%;

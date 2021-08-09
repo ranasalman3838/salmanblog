@@ -1,5 +1,6 @@
 {% extends "blog/base.html" %}
 {% load blog_tags %}
+{% load widget_tweaks %}
 {% block title %}{{ post.title }}{% endblock %}
 {% block content %}
 <h1>{{ post.title }}</h1>
@@ -13,7 +14,6 @@ Share this post
 </a>
 </p>
     <hr>
-
     <h2>Similar posts</h2>
 {% for post in similar_posts %}
 <p>
@@ -44,10 +44,20 @@ Comment {{ forloop.counter }} by {{ comment.name }}
 {% else %}
 <h2>Add a new comment</h2>
 <form method="post">
-{{ comment_form.as_p }}
+<label class="label">Name</label>
+    {% render_field comment_form.name class="input form-control" placeholder="your name" %}
+      <br>
+    <label class="label">Your Comment</label>
+    {% render_field comment_form.body rows=3 class="textarea form-control" placeholder="Enter yur comments" %}
+      <br>
+
+
 {% csrf_token %}
 <p><input type="submit" value="Add comment"></p>
 </form>
 {% endif %}
     <button><a href="{% url 'blog:post_list' %}"> Go back</a></button>
 {% endblock %}
+
+
+
